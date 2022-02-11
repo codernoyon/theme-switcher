@@ -1,0 +1,127 @@
+/* --- Popping font from google fonts ---- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    transition: .3s ease;
+
+}
+
+/* light theme colors */
+body[data-theme="light"]{
+    --color-1: #c4dcf1;
+    --color-2: #fff;
+    --color-3: rgba( 255, 255, 255, 0.25 );
+    --color-4:  #50526e;
+}
+
+/* dark theme colors */
+body[data-theme="dark"]{
+    --color-1: #1E1F26;
+    --color-2: #292c33;
+    --color-3: #17181a;
+    --color-4:  #babaca;
+
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-4);
+
+}
+
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    background: var(--color-1);
+}
+
+
+.container{
+    background: var(--color-3);
+    width: 90%;
+    padding: 2rem;
+    border-radius: .5rem;
+    max-width: 500px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.247);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+
+.container h2{
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.container button{
+    background: var(--color-4);
+    padding: 10px 30px;
+    border: none;
+    color: var(--color-2);
+    border-radius: .5rem;
+    margin-top: 1rem;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.theme-switcher{
+    position: absolute;
+    right: 30px;
+    top: 10px;
+
+}
+
+.theme-switcher input[type='checkbox']{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.theme-switcher label{
+    display: block;
+    text-indent: -9999px;
+    height: 30px;
+    width: 60px;
+    background: aliceblue;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: .5s ease background;
+}
+
+.theme-switcher label::after{
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background: rgb(36, 19, 94);
+    transition: .5s ease;
+}
+
+
+.theme-switcher input[type='checkbox']:checked + label{
+    background: rgb(27, 21, 21);
+    border: 2px solid whitesmoke;
+}
+
+.theme-switcher input[type='checkbox']:checked + label::after{
+    background: aliceblue;
+    left: calc(100% - 25px);
+}
